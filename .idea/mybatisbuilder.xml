@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MybatisBuilder.project.settings">
+    <option name="connectionInfoList">
+      <list>
+        <ConnectionInfo>
+          <option name="database" value="life.apc" />
+          <option name="description" value="" />
+          <option name="driverClass" value="" />
+          <option name="driverLibrary" value="" />
+          <option name="driverType" value="MySQL" />
+          <option name="host" value="localhost" />
+          <option name="id" value="bcd5d68e177e4b65a24368eee8fbfcbb" />
+          <option name="name" value="life.apc" />
+          <option name="port" value="6446" />
+          <option name="url" value="" />
+          <option name="userName" value="cj" />
+        </ConnectionInfo>
+      </list>
+    </option>
+    <option name="defaultParameters">
+      <DefaultParameters>
+        <option name="renameConfig">
+          <Config>
+            <option name="mapperTypePattern" value="" />
+            <option name="exampleTypePattern" value="" />
+            <option name="sqlFileNamePattern" value="" />
+          </Config>
+        </option>
+        <option name="selectWithLockConfig">
+          <SelectWithLockConfig>
+            <option name="byPrimaryKeyWithLockOverride" value="" />
+            <option name="byExampleWithLockOverride" value="" />
+          </SelectWithLockConfig>
+        </option>
+      </DefaultParameters>
+    </option>
+    <option name="historyMap">
+      <map>
+        <entry key="JAVA_CLIENT_PACKAGE">
+          <value>
+            <list>
+              <option value="cj.life.middle.apc.repository.mapper" />
+            </list>
+          </value>
+        </entry>
+        <entry key="JAVA_MODEL_PACKAGE">
+          <value>
+            <list>
+              <option value="cj.life.middle.apc.domain" />
+            </list>
+          </value>
+        </entry>
+        <entry key="SQL_MAP_PACKAGE">
+          <value>
+            <list>
+              <option value="mapper" />
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastGeneratorParamWrapper">
+      <GeneratorParamWrapper>
+        <option name="defaultTableConfigWrapper">
+          <TableConfigurationWrapper>
+            <option name="domainObjectRenamingRule">
+              <DomainObjectRenamingRule>
+                <option name="replaceString" value="" />
+                <option name="searchString" value="" />
+              </DomainObjectRenamingRule>
+            </option>
+          </TableConfigurationWrapper>
+        </option>
+        <option name="javaClientConfig">
+          <JavaClientGeneratorConfiguration>
+            <option name="configurationType" value="XMLMAPPER" />
+            <option name="targetPackage" value="cj.life.middle.apc.repository.mapper" />
+            <option name="targetProject" value="$PROJECT_DIR$/cj-life-middle-apc-starter/src/main/java" />
+          </JavaClientGeneratorConfiguration>
+        </option>
+        <option name="javaModelConfig">
+          <JavaModelGeneratorConfiguration>
+            <option name="targetPackage" value="cj.life.middle.apc.domain" />
+            <option name="targetProject" value="$PROJECT_DIR$/cj-life-middle-apc-framework/src/main/java" />
+          </JavaModelGeneratorConfiguration>
+        </option>
+        <option name="selectedPlugins">
+          <map>
+            <entry key="com.chuntung.plugin.mybatis.builder.generator.plugins.LombokPlugin" />
+            <entry key="com.chuntung.plugin.mybatis.builder.generator.plugins.MapperAnnotationPlugin">
+              <value>
+                <PluginConfigWrapper>
+                  <option name="json" value="{&quot;customAnnotationType&quot;:&quot;org.springframework.stereotype.Repository&quot;}" />
+                  <option name="type" value="com.chuntung.plugin.mybatis.builder.generator.plugins.MapperAnnotationPlugin$Config" />
+                </PluginConfigWrapper>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="selectedTables">
+          <list>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="ApcChannel" />
+              <option name="tableComment" value="频道" />
+              <option name="tableName" value="apc_channel" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="ApcPortlet" />
+              <option name="tableComment" value="频道栏目" />
+              <option name="tableName" value="apc_portlet" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimCategory" />
+              <option name="tableComment" value="类别维" />
+              <option name="tableName" value="dim_category" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimCharge" />
+              <option name="tableComment" value="应用要价。仅包两项，付费或免费" />
+              <option name="tableName" value="dim_charge" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimCountry" />
+              <option name="tableComment" value="国家维度" />
+              <option name="tableName" value="dim_country" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimTerminal" />
+              <option name="tableComment" value="终端维度，如：生命app，生命小程序，微信小程序等等" />
+              <option name="tableName" value="dim_terminal" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="FactApp" />
+              <option name="tableComment" value="事实表：应用" />
+              <option name="tableName" value="fact_app" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="FactImgs" />
+              <option name="tableComment" value="发布时应用描述图片" />
+              <option name="tableName" value="fact_imgs" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="FactVersions" />
+              <option name="tableComment" value="发布的版本历史" />
+              <option name="tableName" value="fact_versions" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="MtPortletApp" />
+              <option name="tableComment" value="向栏目挂载app" />
+              <option name="tableName" value="mt_portlet_app" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="MtPortletCategory" />
+              <option name="tableComment" value="挂载栏目到类别" />
+              <option name="tableName" value="mt_portlet_category" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="MtPortletChannel" />
+              <option name="tableComment" value="挂载栏目到频道" />
+              <option name="tableName" value="mt_portlet_channel" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="PurchAppEmpl" />
+              <option name="tableComment" value="员工购买的app，在life中user不能直接安装应用，必须在某个租户下作为员工才能安装应用。&#10;在员工通过uc安装应用时在应用中心留痕，因此apc和uc(desktop_iapp)都会有一份安装记录。但apc与uc的展示方式或许不同." />
+              <option name="tableName" value="purch_app_empl" />
+            </TableInfo>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="PurchAppTenant" />
+              <option name="tableComment" value="租户购买的app。在租户通过uc安装应用时在应用中心留痕，因此apc和uc都会有一份安装记录。但apc与uc的展示方式或许不同." />
+              <option name="tableName" value="purch_app_tenant" />
+            </TableInfo>
+          </list>
+        </option>
+        <option name="sqlMapConfig">
+          <SqlMapGeneratorConfiguration>
+            <option name="targetPackage" value="mapper" />
+            <option name="targetProject" value="$PROJECT_DIR$/cj-life-middle-apc-starter/src/main/resources" />
+          </SqlMapGeneratorConfiguration>
+        </option>
+        <option name="targetRuntime" value="MyBatis3" />
+      </GeneratorParamWrapper>
+    </option>
+    <option name="tableInfoMap">
+      <map>
+        <entry key="life.apc#apc_channel">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="ApcChannel" />
+              <option name="tableComment" value="频道" />
+              <option name="tableName" value="apc_channel" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#apc_portlet">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="ApcPortlet" />
+              <option name="tableComment" value="频道栏目" />
+              <option name="tableName" value="apc_portlet" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#apc_portlet_item">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="ApcPortletItem" />
+              <option name="tableComment" value="栏目内容" />
+              <option name="tableName" value="apc_portlet_item" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#apc_portlet_item_type">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="ApcPortletItemType" />
+              <option name="tableComment" value="内容类型" />
+              <option name="tableName" value="apc_portlet_item_type" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#dim_category">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimCategory" />
+              <option name="tableComment" value="类别维" />
+              <option name="tableName" value="dim_category" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#dim_charge">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimCharge" />
+              <option name="tableComment" value="应用要价。仅包两项，付费或免费" />
+              <option name="tableName" value="dim_charge" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#dim_country">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimCountry" />
+              <option name="tableComment" value="国家维度" />
+              <option name="tableName" value="dim_country" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#dim_terminal">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="DimTerminal" />
+              <option name="tableComment" value="终端维度，如：生命app，生命小程序，微信小程序等等" />
+              <option name="tableName" value="dim_terminal" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#fact_app">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="FactApp" />
+              <option name="tableComment" value="事实表：应用" />
+              <option name="tableName" value="fact_app" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#fact_imgs">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="FactImgs" />
+              <option name="tableComment" value="发布时应用描述图片" />
+              <option name="tableName" value="fact_imgs" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#fact_versions">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="FactVersions" />
+              <option name="tableComment" value="发布的版本历史" />
+              <option name="tableName" value="fact_versions" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#mt_portlet_app">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="MtPortletApp" />
+              <option name="tableComment" value="向栏目挂载app" />
+              <option name="tableName" value="mt_portlet_app" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#mt_portlet_category">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="MtPortletCategory" />
+              <option name="tableComment" value="挂载栏目到类别" />
+              <option name="tableName" value="mt_portlet_category" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#mt_portlet_channel">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="MtPortletChannel" />
+              <option name="tableComment" value="挂载栏目到频道" />
+              <option name="tableName" value="mt_portlet_channel" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#purch_app_empl">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="PurchAppEmpl" />
+              <option name="tableComment" value="员工购买的app，在life中user不能直接安装应用，必须在某个租户下作为员工才能安装应用。&#10;在员工通过uc安装应用时在应用中心留痕，因此apc和uc(desktop_iapp)都会有一份安装记录。但apc与uc的展示方式或许不同." />
+              <option name="tableName" value="purch_app_empl" />
+            </TableInfo>
+          </value>
+        </entry>
+        <entry key="life.apc#purch_app_tenant">
+          <value>
+            <TableInfo>
+              <option name="database" value="life.apc" />
+              <option name="domainName" value="PurchAppTenant" />
+              <option name="tableComment" value="租户购买的app。在租户通过uc安装应用时在应用中心留痕，因此apc和uc都会有一份安装记录。但apc与uc的展示方式或许不同." />
+              <option name="tableName" value="purch_app_tenant" />
+            </TableInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

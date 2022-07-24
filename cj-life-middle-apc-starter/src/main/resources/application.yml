@@ -1,0 +1,45 @@
+server:
+  port: 30100
+  servlet:
+    context-path: /
+spring:
+  profiles:
+    active: ${docker.life.spring.profiles.active:dev}
+  mvc:
+    pathmatch:
+      #如果不采用ANT_PATH_MATCHER策略，swagger的api出不来
+      matching-strategy: ANT_PATH_MATCHER
+  application:
+    #调用者feign只认spring.application.name，不认eureka.instance.appname配置应用名
+    #所以不论服务提供者还是feign消费者，spring.application.name和eureka.instance.appname都配置就最好了
+    #feign调用方大小写不区分，而注册中心永远显示为大写
+    name: cj-life-middle-apc
+# Mybatis 相关配置
+mybatis:
+  mapperLocations: classpath*:mapper/**/*.xml
+  #实体类别名，在mapper中不必写全路径类名了
+  type-aliases-package: cj.life.middle.apc.domain
+  configuration:
+    map-underscore-to-camel-case: true
+life:
+  swagger:
+    #告知系统什么是API版本地址，默认是：^/api/v(\\d+)
+    apiVersionPattern:
+    #    defaultGroupName: 默认能力（所有）
+    enabled: true
+    #所有api的最大版本，用于生成组。
+    #在knife4j上展示的分组
+    maxVersion: 4
+    basePackage:
+    apiInfo:
+      title: 应用中心
+      description: 中台/应用中心
+      contact: cj 18023457655
+      url:
+      email: zhaoxiangbin_2005@126.com
+      version: 1.0.0
+  responseMsg:
+    - code: 200
+      message: OK
+    - code: 500
+      message: 内部错误
