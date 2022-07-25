@@ -2,9 +2,10 @@ package cj.life.middle.apc.repository.mapper;
 
 import cj.life.middle.apc.domain.ApcPortlet;
 import cj.life.middle.apc.domain.ApcPortletExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface ApcPortletMapper {
@@ -68,5 +69,4 @@ public interface ApcPortletMapper {
     List<ApcPortlet> listPortlet(@Param("limit") int limit,@Param("offset") long offset);
 
     List<ApcPortlet> listPortletByShowMode(@Param("showMode")String showMode, @Param("limit") int limit,@Param("offset") long offset);
-
 }

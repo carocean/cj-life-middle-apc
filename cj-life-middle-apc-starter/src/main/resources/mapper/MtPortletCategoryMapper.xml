@@ -193,4 +193,20 @@
     where portlet_id = #{portletId,jdbcType=VARCHAR}
       and cate_id = #{cateId,jdbcType=VARCHAR}
   </update>
+  <select id="listPortletByCategory" parameterType="cj.life.middle.apc.domain.MtPortletCategory" resultMap="cj.life.middle.apc.repository.mapper.ApcPortletMapper.BaseResultMap">
+    select
+    let.*
+    from mt_portlet_category mt,apc_portlet let
+    where mt.portlet_id=let.portlet_id
+    and   mt.cate_id = #{cateId,jdbcType=VARCHAR}
+    order by mt.order_num
+  </select>
+  <select id="listCategoryByPortlet" parameterType="cj.life.middle.apc.domain.MtPortletCategory" resultMap="cj.life.middle.apc.repository.mapper.DimCategoryMapper.BaseResultMap">
+    select
+      cate.*
+    from mt_portlet_category mt,dim_category cate
+    where mt.cate_id=cate.cate_id
+    and   mt.portlet_id = #{portletId,jdbcType=VARCHAR}
+    order by mt.order_num
+  </select>
 </mapper>

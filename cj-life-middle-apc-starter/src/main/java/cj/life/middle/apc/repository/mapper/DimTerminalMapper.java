@@ -62,4 +62,7 @@ public interface DimTerminalMapper {
      * @mbg.generated generated automatically, do not modify!
      */
     int updateByPrimaryKey(DimTerminal row);
+
+    void setOrderNum(@Param("terminalId") String terminalId, @Param("orderNum") int orderNum);
+
 }

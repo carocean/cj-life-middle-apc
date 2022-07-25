@@ -208,4 +208,10 @@
       order_num = #{orderNum,jdbcType=INTEGER}
     where terminal_id = #{terminalId,jdbcType=VARCHAR}
   </update>
+  <update id="setOrderNum" parameterType="cj.life.middle.apc.domain.DimTerminal">
+    update dim_terminal
+    set
+    order_num = #{orderNum,jdbcType=INTEGER}
+    where terminal_id = #{terminalId,jdbcType=VARCHAR}
+  </update>
 </mapper>

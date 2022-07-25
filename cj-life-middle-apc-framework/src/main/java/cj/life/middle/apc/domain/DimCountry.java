@@ -15,18 +15,18 @@ public class DimCountry {
     private String countryId;
 
     /**
-     * Column: cnname
+     * Column: cn_name
      * Type: VARCHAR(30)
      * Remark: 中文名
      */
-    private String cnname;
+    private String cnName;
 
     /**
-     * Column: enname
+     * Column: en_name
      * Type: VARCHAR(30)
      * Remark: 英文名
      */
-    private String enname;
+    private String enName;
 
     /**
      * Column: alpha2_code

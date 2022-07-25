@@ -208,4 +208,10 @@
       cate_note = #{cateNote,jdbcType=VARCHAR}
     where cate_id = #{cateId,jdbcType=VARCHAR}
   </update>
+  <update id="setOrderNum" parameterType="cj.life.middle.apc.domain.DimCategory">
+    update dim_category
+    set
+    order_num = #{orderNum,jdbcType=INTEGER}
+    where cate_id = #{cateId,jdbcType=VARCHAR}
+  </update>
 </mapper>

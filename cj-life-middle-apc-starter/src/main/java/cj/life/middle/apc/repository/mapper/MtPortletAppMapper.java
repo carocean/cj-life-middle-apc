@@ -4,11 +4,10 @@ import cj.life.middle.apc.domain.ApcPortlet;
 import cj.life.middle.apc.domain.FactApp;
 import cj.life.middle.apc.domain.MtPortletApp;
 import cj.life.middle.apc.domain.MtPortletAppExample;
-
-import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface MtPortletAppMapper {
@@ -70,5 +69,4 @@ public interface MtPortletAppMapper {
     List<FactApp> listAppByPortlet(@Param("portletId") String portletId, @Param("limit") int limit, @Param("offset") long offset);
 
     List<ApcPortlet> listPortletByApp(@Param("appId") String appId);
-
 }

@@ -357,76 +357,6 @@ public class FactAppExample {
             return (Criteria) this;
         }
 
-        public Criteria andChargeIdIsNull() {
-            addCriterion("charge_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdIsNotNull() {
-            addCriterion("charge_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdEqualTo(String value) {
-            addCriterion("charge_id =", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdNotEqualTo(String value) {
-            addCriterion("charge_id <>", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdGreaterThan(String value) {
-            addCriterion("charge_id >", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdGreaterThanOrEqualTo(String value) {
-            addCriterion("charge_id >=", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdLessThan(String value) {
-            addCriterion("charge_id <", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdLessThanOrEqualTo(String value) {
-            addCriterion("charge_id <=", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdLike(String value) {
-            addCriterion("charge_id like", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdNotLike(String value) {
-            addCriterion("charge_id not like", value, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdIn(List<String> values) {
-            addCriterion("charge_id in", values, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdNotIn(List<String> values) {
-            addCriterion("charge_id not in", values, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdBetween(String value1, String value2) {
-            addCriterion("charge_id between", value1, value2, "chargeId");
-            return (Criteria) this;
-        }
-
-        public Criteria andChargeIdNotBetween(String value1, String value2) {
-            addCriterion("charge_id not between", value1, value2, "chargeId");
-            return (Criteria) this;
-        }
-
         public Criteria andCountryIdIsNull() {
             addCriterion("country_id is null");
             return (Criteria) this;
@@ -494,6 +424,76 @@ public class FactAppExample {
 
         public Criteria andCountryIdNotBetween(String value1, String value2) {
             addCriterion("country_id not between", value1, value2, "countryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeIsNull() {
+            addCriterion("charge_mode is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeIsNotNull() {
+            addCriterion("charge_mode is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeEqualTo(String value) {
+            addCriterion("charge_mode =", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeNotEqualTo(String value) {
+            addCriterion("charge_mode <>", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeGreaterThan(String value) {
+            addCriterion("charge_mode >", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeGreaterThanOrEqualTo(String value) {
+            addCriterion("charge_mode >=", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeLessThan(String value) {
+            addCriterion("charge_mode <", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeLessThanOrEqualTo(String value) {
+            addCriterion("charge_mode <=", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeLike(String value) {
+            addCriterion("charge_mode like", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeNotLike(String value) {
+            addCriterion("charge_mode not like", value, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeIn(List<String> values) {
+            addCriterion("charge_mode in", values, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeNotIn(List<String> values) {
+            addCriterion("charge_mode not in", values, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeBetween(String value1, String value2) {
+            addCriterion("charge_mode between", value1, value2, "chargeMode");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeModeNotBetween(String value1, String value2) {
+            addCriterion("charge_mode not between", value1, value2, "chargeMode");
             return (Criteria) this;
         }
 

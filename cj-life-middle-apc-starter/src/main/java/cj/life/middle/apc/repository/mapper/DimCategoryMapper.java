@@ -62,4 +62,7 @@ public interface DimCategoryMapper {
      * @mbg.generated generated automatically, do not modify!
      */
     int updateByPrimaryKey(DimCategory row);
+
+    void setOrderNum(@Param("cateId") String cateId, @Param("orderNum") int orderNum);
+
 }

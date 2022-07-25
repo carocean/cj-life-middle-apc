@@ -1,10 +1,10 @@
-package cj.life.middle.apc.web;
+package cj.life.middle.apc.service;
 
 import cj.life.middle.apc.domain.DimCountry;
 
 import java.util.List;
 
-public interface IDimCountryRC {
+public interface IDimCountryService {
     String createCountry(String cnName, String enName, String alpha2Code, String alpha3Code, String numericCode, String areaCode);
 
     void removeCountry(String countryId);

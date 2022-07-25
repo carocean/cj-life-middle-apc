@@ -4,8 +4,8 @@
   <resultMap id="BaseResultMap" type="cj.life.middle.apc.domain.DimCountry">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     <id column="country_id" jdbcType="VARCHAR" property="countryId" />
-    <result column="cnname" jdbcType="VARCHAR" property="cnname" />
-    <result column="enname" jdbcType="VARCHAR" property="enname" />
+    <result column="cn_name" jdbcType="VARCHAR" property="cnName" />
+    <result column="en_name" jdbcType="VARCHAR" property="enName" />
     <result column="alpha2_code" jdbcType="VARCHAR" property="alpha2Code" />
     <result column="alpha3_code" jdbcType="VARCHAR" property="alpha3Code" />
     <result column="numeric_code" jdbcType="VARCHAR" property="numericCode" />
@@ -73,7 +73,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    country_id, cnname, enname, alpha2_code, alpha3_code, numeric_code, area_code
+    country_id, cn_name, en_name, alpha2_code, alpha3_code, numeric_code, area_code
   </sql>
   <select id="selectByExample" parameterType="cj.life.middle.apc.domain.DimCountryExample" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -111,10 +111,10 @@
   </delete>
   <insert id="insert" parameterType="cj.life.middle.apc.domain.DimCountry">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    insert into dim_country (country_id, cnname, enname, 
+    insert into dim_country (country_id, cn_name, en_name, 
       alpha2_code, alpha3_code, numeric_code, 
       area_code)
-    values (#{countryId,jdbcType=VARCHAR}, #{cnname,jdbcType=VARCHAR}, #{enname,jdbcType=VARCHAR}, 
+    values (#{countryId,jdbcType=VARCHAR}, #{cnName,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, 
       #{alpha2Code,jdbcType=VARCHAR}, #{alpha3Code,jdbcType=VARCHAR}, #{numericCode,jdbcType=VARCHAR}, 
       #{areaCode,jdbcType=VARCHAR})
   </insert>
@@ -125,11 +125,11 @@
       <if test="countryId != null">
         country_id,
       </if>
-      <if test="cnname != null">
-        cnname,
+      <if test="cnName != null">
+        cn_name,
       </if>
-      <if test="enname != null">
-        enname,
+      <if test="enName != null">
+        en_name,
       </if>
       <if test="alpha2Code != null">
         alpha2_code,
@@ -148,11 +148,11 @@
       <if test="countryId != null">
         #{countryId,jdbcType=VARCHAR},
       </if>
-      <if test="cnname != null">
-        #{cnname,jdbcType=VARCHAR},
+      <if test="cnName != null">
+        #{cnName,jdbcType=VARCHAR},
       </if>
-      <if test="enname != null">
-        #{enname,jdbcType=VARCHAR},
+      <if test="enName != null">
+        #{enName,jdbcType=VARCHAR},
       </if>
       <if test="alpha2Code != null">
         #{alpha2Code,jdbcType=VARCHAR},
@@ -182,11 +182,11 @@
       <if test="row.countryId != null">
         country_id = #{row.countryId,jdbcType=VARCHAR},
       </if>
-      <if test="row.cnname != null">
-        cnname = #{row.cnname,jdbcType=VARCHAR},
+      <if test="row.cnName != null">
+        cn_name = #{row.cnName,jdbcType=VARCHAR},
       </if>
-      <if test="row.enname != null">
-        enname = #{row.enname,jdbcType=VARCHAR},
+      <if test="row.enName != null">
+        en_name = #{row.enName,jdbcType=VARCHAR},
       </if>
       <if test="row.alpha2Code != null">
         alpha2_code = #{row.alpha2Code,jdbcType=VARCHAR},
@@ -209,8 +209,8 @@
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update dim_country
     set country_id = #{row.countryId,jdbcType=VARCHAR},
-      cnname = #{row.cnname,jdbcType=VARCHAR},
-      enname = #{row.enname,jdbcType=VARCHAR},
+      cn_name = #{row.cnName,jdbcType=VARCHAR},
+      en_name = #{row.enName,jdbcType=VARCHAR},
       alpha2_code = #{row.alpha2Code,jdbcType=VARCHAR},
       alpha3_code = #{row.alpha3Code,jdbcType=VARCHAR},
       numeric_code = #{row.numericCode,jdbcType=VARCHAR},
@@ -223,11 +223,11 @@
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update dim_country
     <set>
-      <if test="cnname != null">
-        cnname = #{cnname,jdbcType=VARCHAR},
+      <if test="cnName != null">
+        cn_name = #{cnName,jdbcType=VARCHAR},
       </if>
-      <if test="enname != null">
-        enname = #{enname,jdbcType=VARCHAR},
+      <if test="enName != null">
+        en_name = #{enName,jdbcType=VARCHAR},
       </if>
       <if test="alpha2Code != null">
         alpha2_code = #{alpha2Code,jdbcType=VARCHAR},
@@ -247,8 +247,8 @@
   <update id="updateByPrimaryKey" parameterType="cj.life.middle.apc.domain.DimCountry">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     update dim_country
-    set cnname = #{cnname,jdbcType=VARCHAR},
-      enname = #{enname,jdbcType=VARCHAR},
+    set cn_name = #{cnName,jdbcType=VARCHAR},
+      en_name = #{enName,jdbcType=VARCHAR},
       alpha2_code = #{alpha2Code,jdbcType=VARCHAR},
       alpha3_code = #{alpha3Code,jdbcType=VARCHAR},
       numeric_code = #{numericCode,jdbcType=VARCHAR},

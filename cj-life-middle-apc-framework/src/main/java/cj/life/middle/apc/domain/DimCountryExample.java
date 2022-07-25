@@ -216,143 +216,143 @@ public class DimCountryExample {
             return (Criteria) this;
         }
 
-        public Criteria andCnnameIsNull() {
-            addCriterion("cnname is null");
+        public Criteria andCnNameIsNull() {
+            addCriterion("cn_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameIsNotNull() {
-            addCriterion("cnname is not null");
+        public Criteria andCnNameIsNotNull() {
+            addCriterion("cn_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameEqualTo(String value) {
-            addCriterion("cnname =", value, "cnname");
+        public Criteria andCnNameEqualTo(String value) {
+            addCriterion("cn_name =", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameNotEqualTo(String value) {
-            addCriterion("cnname <>", value, "cnname");
+        public Criteria andCnNameNotEqualTo(String value) {
+            addCriterion("cn_name <>", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameGreaterThan(String value) {
-            addCriterion("cnname >", value, "cnname");
+        public Criteria andCnNameGreaterThan(String value) {
+            addCriterion("cn_name >", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameGreaterThanOrEqualTo(String value) {
-            addCriterion("cnname >=", value, "cnname");
+        public Criteria andCnNameGreaterThanOrEqualTo(String value) {
+            addCriterion("cn_name >=", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameLessThan(String value) {
-            addCriterion("cnname <", value, "cnname");
+        public Criteria andCnNameLessThan(String value) {
+            addCriterion("cn_name <", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameLessThanOrEqualTo(String value) {
-            addCriterion("cnname <=", value, "cnname");
+        public Criteria andCnNameLessThanOrEqualTo(String value) {
+            addCriterion("cn_name <=", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameLike(String value) {
-            addCriterion("cnname like", value, "cnname");
+        public Criteria andCnNameLike(String value) {
+            addCriterion("cn_name like", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameNotLike(String value) {
-            addCriterion("cnname not like", value, "cnname");
+        public Criteria andCnNameNotLike(String value) {
+            addCriterion("cn_name not like", value, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameIn(List<String> values) {
-            addCriterion("cnname in", values, "cnname");
+        public Criteria andCnNameIn(List<String> values) {
+            addCriterion("cn_name in", values, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameNotIn(List<String> values) {
-            addCriterion("cnname not in", values, "cnname");
+        public Criteria andCnNameNotIn(List<String> values) {
+            addCriterion("cn_name not in", values, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameBetween(String value1, String value2) {
-            addCriterion("cnname between", value1, value2, "cnname");
+        public Criteria andCnNameBetween(String value1, String value2) {
+            addCriterion("cn_name between", value1, value2, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andCnnameNotBetween(String value1, String value2) {
-            addCriterion("cnname not between", value1, value2, "cnname");
+        public Criteria andCnNameNotBetween(String value1, String value2) {
+            addCriterion("cn_name not between", value1, value2, "cnName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameIsNull() {
-            addCriterion("enname is null");
+        public Criteria andEnNameIsNull() {
+            addCriterion("en_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameIsNotNull() {
-            addCriterion("enname is not null");
+        public Criteria andEnNameIsNotNull() {
+            addCriterion("en_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameEqualTo(String value) {
-            addCriterion("enname =", value, "enname");
+        public Criteria andEnNameEqualTo(String value) {
+            addCriterion("en_name =", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameNotEqualTo(String value) {
-            addCriterion("enname <>", value, "enname");
+        public Criteria andEnNameNotEqualTo(String value) {
+            addCriterion("en_name <>", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameGreaterThan(String value) {
-            addCriterion("enname >", value, "enname");
+        public Criteria andEnNameGreaterThan(String value) {
+            addCriterion("en_name >", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameGreaterThanOrEqualTo(String value) {
-            addCriterion("enname >=", value, "enname");
+        public Criteria andEnNameGreaterThanOrEqualTo(String value) {
+            addCriterion("en_name >=", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameLessThan(String value) {
-            addCriterion("enname <", value, "enname");
+        public Criteria andEnNameLessThan(String value) {
+            addCriterion("en_name <", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameLessThanOrEqualTo(String value) {
-            addCriterion("enname <=", value, "enname");
+        public Criteria andEnNameLessThanOrEqualTo(String value) {
+            addCriterion("en_name <=", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameLike(String value) {
-            addCriterion("enname like", value, "enname");
+        public Criteria andEnNameLike(String value) {
+            addCriterion("en_name like", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameNotLike(String value) {
-            addCriterion("enname not like", value, "enname");
+        public Criteria andEnNameNotLike(String value) {
+            addCriterion("en_name not like", value, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameIn(List<String> values) {
-            addCriterion("enname in", values, "enname");
+        public Criteria andEnNameIn(List<String> values) {
+            addCriterion("en_name in", values, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameNotIn(List<String> values) {
-            addCriterion("enname not in", values, "enname");
+        public Criteria andEnNameNotIn(List<String> values) {
+            addCriterion("en_name not in", values, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameBetween(String value1, String value2) {
-            addCriterion("enname between", value1, value2, "enname");
+        public Criteria andEnNameBetween(String value1, String value2) {
+            addCriterion("en_name between", value1, value2, "enName");
             return (Criteria) this;
         }
 
-        public Criteria andEnnameNotBetween(String value1, String value2) {
-            addCriterion("enname not between", value1, value2, "enname");
+        public Criteria andEnNameNotBetween(String value1, String value2) {
+            addCriterion("en_name not between", value1, value2, "enName");
             return (Criteria) this;
         }
 

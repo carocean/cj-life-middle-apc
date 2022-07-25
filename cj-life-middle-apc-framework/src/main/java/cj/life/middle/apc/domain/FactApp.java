@@ -30,18 +30,18 @@ public class FactApp {
     private String terminalId;
 
     /**
-     * Column: charge_id
-     * Type: VARCHAR(10)
-     * Remark: 要价标识
-     */
-    private String chargeId;
-
-    /**
      * Column: country_id
      * Type: VARCHAR(50)
      * Remark: 国家代码表
      */
     private String countryId;
+
+    /**
+     * Column: charge_mode
+     * Type: VARCHAR(10)
+     * Remark: 要价标识:free|pay
+     */
+    private String chargeMode;
 
     /**
      * Column: app_name

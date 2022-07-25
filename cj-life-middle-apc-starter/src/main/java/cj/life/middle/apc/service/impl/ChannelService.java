@@ -1,5 +1,6 @@
 package cj.life.middle.apc.service.impl;
 
+import cj.life.ability.api.exception.ApiException;
 import cj.life.middle.apc.domain.ApcChannel;
 import cj.life.middle.apc.domain.ApcChannelExample;
 import cj.life.middle.apc.domain.ApcPortlet;
@@ -22,6 +23,9 @@ public class ChannelService implements IChannelService {
 
     @Override
     public String createChannel(String channelName, int orderNum, String note) {
+        if (existsChannelName(channelName)) {
+            throw new ApiException("5000", "The name of channel already exist.");
+        }
         String idNumSeq = null;
         while (true) {
             idNumSeq = RandomStringUtils.randomNumeric(20);
@@ -39,6 +43,12 @@ public class ChannelService implements IChannelService {
         channel.setNote(note);
         channelMapper.insertSelective(channel);
         return idNumSeq;
+    }
+
+    private boolean existsChannelName(String channelName) {
+        ApcChannelExample example = new ApcChannelExample();
+        example.createCriteria().andChannelNameEqualTo(channelName);
+        return channelMapper.countByExample(example) > 0;
     }
 
     @Override

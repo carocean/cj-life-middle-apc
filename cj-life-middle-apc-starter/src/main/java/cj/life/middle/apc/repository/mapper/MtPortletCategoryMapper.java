@@ -1,5 +1,7 @@
 package cj.life.middle.apc.repository.mapper;
 
+import cj.life.middle.apc.domain.ApcPortlet;
+import cj.life.middle.apc.domain.DimCategory;
 import cj.life.middle.apc.domain.MtPortletCategory;
 import cj.life.middle.apc.domain.MtPortletCategoryExample;
 import java.util.List;
@@ -62,4 +64,9 @@ public interface MtPortletCategoryMapper {
      * @mbg.generated generated automatically, do not modify!
      */
     int updateByPrimaryKey(MtPortletCategory row);
+
+    List<ApcPortlet> listPortletByCategory(@Param("cateId") String cateId);
+
+    List<DimCategory> listCategoryByPortlet(@Param("portletId") String portletId);
+
 }

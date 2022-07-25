@@ -1,11 +1,11 @@
-package cj.life.middle.apc.web;
+package cj.life.middle.apc.service;
 
 import cj.life.middle.apc.domain.ApcPortlet;
 import cj.life.middle.apc.domain.DimCategory;
 
 import java.util.List;
 
-public interface IDimCategoryRC {
+public interface IDimCategoryService {
     String createCategory(String cateName, int orderNum, String cateNote);
 
     void removeCategory(String cateId);
@@ -14,7 +14,7 @@ public interface IDimCategoryRC {
 
     List<DimCategory> listCategory();
 
-    void mountPortletToCategory(String portletId, String cateId,int orderNum);
+    void mountPortletToCategory(String portletId, String cateId, int orderNum);
 
     void unmountPortletToCategory(String portletId, String cateId);
 

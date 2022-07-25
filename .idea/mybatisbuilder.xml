@@ -120,12 +120,6 @@
             </TableInfo>
             <TableInfo>
               <option name="database" value="life.apc" />
-              <option name="domainName" value="DimCharge" />
-              <option name="tableComment" value="应用要价。仅包两项，付费或免费" />
-              <option name="tableName" value="dim_charge" />
-            </TableInfo>
-            <TableInfo>
-              <option name="database" value="life.apc" />
               <option name="domainName" value="DimCountry" />
               <option name="tableComment" value="国家维度" />
               <option name="tableName" value="dim_country" />

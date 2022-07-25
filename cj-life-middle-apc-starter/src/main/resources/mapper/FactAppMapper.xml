@@ -6,8 +6,8 @@
     <id column="app_id" jdbcType="VARCHAR" property="appId" />
     <result column="cate_id" jdbcType="VARCHAR" property="cateId" />
     <result column="terminal_id" jdbcType="VARCHAR" property="terminalId" />
-    <result column="charge_id" jdbcType="VARCHAR" property="chargeId" />
     <result column="country_id" jdbcType="VARCHAR" property="countryId" />
+    <result column="charge_mode" jdbcType="VARCHAR" property="chargeMode" />
     <result column="app_name" jdbcType="VARCHAR" property="appName" />
     <result column="app_icon" jdbcType="VARCHAR" property="appIcon" />
     <result column="newest_version" jdbcType="VARCHAR" property="newestVersion" />
@@ -82,7 +82,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    app_id, cate_id, terminal_id, charge_id, country_id, app_name, app_icon, newest_version, 
+    app_id, cate_id, terminal_id, country_id, charge_mode, app_name, app_icon, newest_version, 
     pub_time, app_developer, app_supplier, app_tenant, app_slogan, empl_unit_price, tenant_unit_price, 
     app_note
   </sql>
@@ -123,13 +123,13 @@
   <insert id="insert" parameterType="cj.life.middle.apc.domain.FactApp">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into fact_app (app_id, cate_id, terminal_id, 
-      charge_id, country_id, app_name, 
+      country_id, charge_mode, app_name, 
       app_icon, newest_version, pub_time, 
       app_developer, app_supplier, app_tenant, 
       app_slogan, empl_unit_price, tenant_unit_price, 
       app_note)
     values (#{appId,jdbcType=VARCHAR}, #{cateId,jdbcType=VARCHAR}, #{terminalId,jdbcType=VARCHAR}, 
-      #{chargeId,jdbcType=VARCHAR}, #{countryId,jdbcType=VARCHAR}, #{appName,jdbcType=VARCHAR}, 
+      #{countryId,jdbcType=VARCHAR}, #{chargeMode,jdbcType=VARCHAR}, #{appName,jdbcType=VARCHAR}, 
       #{appIcon,jdbcType=VARCHAR}, #{newestVersion,jdbcType=VARCHAR}, #{pubTime,jdbcType=VARCHAR}, 
       #{appDeveloper,jdbcType=VARCHAR}, #{appSupplier,jdbcType=VARCHAR}, #{appTenant,jdbcType=VARCHAR}, 
       #{appSlogan,jdbcType=VARCHAR}, #{emplUnitPrice,jdbcType=DECIMAL}, #{tenantUnitPrice,jdbcType=DECIMAL}, 
@@ -148,11 +148,11 @@
       <if test="terminalId != null">
         terminal_id,
       </if>
-      <if test="chargeId != null">
-        charge_id,
-      </if>
       <if test="countryId != null">
         country_id,
+      </if>
+      <if test="chargeMode != null">
+        charge_mode,
       </if>
       <if test="appName != null">
         app_name,
@@ -198,11 +198,11 @@
       <if test="terminalId != null">
         #{terminalId,jdbcType=VARCHAR},
       </if>
-      <if test="chargeId != null">
-        #{chargeId,jdbcType=VARCHAR},
-      </if>
       <if test="countryId != null">
         #{countryId,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeMode != null">
+        #{chargeMode,jdbcType=VARCHAR},
       </if>
       <if test="appName != null">
         #{appName,jdbcType=VARCHAR},
@@ -259,11 +259,11 @@
       <if test="row.terminalId != null">
         terminal_id = #{row.terminalId,jdbcType=VARCHAR},
       </if>
-      <if test="row.chargeId != null">
-        charge_id = #{row.chargeId,jdbcType=VARCHAR},
-      </if>
       <if test="row.countryId != null">
         country_id = #{row.countryId,jdbcType=VARCHAR},
+      </if>
+      <if test="row.chargeMode != null">
+        charge_mode = #{row.chargeMode,jdbcType=VARCHAR},
       </if>
       <if test="row.appName != null">
         app_name = #{row.appName,jdbcType=VARCHAR},
@@ -309,8 +309,8 @@
     set app_id = #{row.appId,jdbcType=VARCHAR},
       cate_id = #{row.cateId,jdbcType=VARCHAR},
       terminal_id = #{row.terminalId,jdbcType=VARCHAR},
-      charge_id = #{row.chargeId,jdbcType=VARCHAR},
       country_id = #{row.countryId,jdbcType=VARCHAR},
+      charge_mode = #{row.chargeMode,jdbcType=VARCHAR},
       app_name = #{row.appName,jdbcType=VARCHAR},
       app_icon = #{row.appIcon,jdbcType=VARCHAR},
       newest_version = #{row.newestVersion,jdbcType=VARCHAR},
@@ -336,11 +336,11 @@
       <if test="terminalId != null">
         terminal_id = #{terminalId,jdbcType=VARCHAR},
       </if>
-      <if test="chargeId != null">
-        charge_id = #{chargeId,jdbcType=VARCHAR},
-      </if>
       <if test="countryId != null">
         country_id = #{countryId,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeMode != null">
+        charge_mode = #{chargeMode,jdbcType=VARCHAR},
       </if>
       <if test="appName != null">
         app_name = #{appName,jdbcType=VARCHAR},
@@ -383,8 +383,8 @@
     update fact_app
     set cate_id = #{cateId,jdbcType=VARCHAR},
       terminal_id = #{terminalId,jdbcType=VARCHAR},
-      charge_id = #{chargeId,jdbcType=VARCHAR},
       country_id = #{countryId,jdbcType=VARCHAR},
+      charge_mode = #{chargeMode,jdbcType=VARCHAR},
       app_name = #{appName,jdbcType=VARCHAR},
       app_icon = #{appIcon,jdbcType=VARCHAR},
       newest_version = #{newestVersion,jdbcType=VARCHAR},
