@@ -1,16 +1,17 @@
 package cj.life.middle.apc.service.impl;
 
-import cj.life.middle.apc.remote.UcAppRemote;
+import cj.life.ability.api.ResultCode;
+import cj.life.ability.api.exception.ApiException;
 import cj.life.middle.apc.domain.*;
-import cj.life.middle.apc.repository.mapper.FactAppMapper;
-import cj.life.middle.apc.repository.mapper.FactImgsMapper;
-import cj.life.middle.apc.repository.mapper.FactVersionsMapper;
-import cj.life.middle.apc.repository.mapper.MtPortletAppMapper;
+import cj.life.middle.apc.remote.*;
+import cj.life.middle.apc.repository.mapper.*;
 import cj.life.middle.apc.service.IFactAppService;
 import cj.life.middle.apc.util.IDateUtil;
-import cj.life.middle.uc.domain.UcApp;
+import cj.life.middle.uc.domain.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -28,13 +29,97 @@ public class FactAppService implements IFactAppService {
     MtPortletAppMapper portletAppMapper;
     @Resource
     UcAppRemote ucAppRemote;
+    @Resource
+    EmployeeRemote employeeRemote;
+    @Resource
+    UcUserRemote ucUserRemote;
+    @Resource
+    UcTenantRemote tenantRemote;
+    @Resource
+    OrgRemote orgRemote;
+    @Resource
+    DimCategoryMapper categoryMapper;
+    @Resource
+    DimCountryMapper countryMapper;
+    @Resource
+    DimTerminalMapper terminalMapper;
 
+    @Transactional
     @Override
-    public void createFactApp(String appId, String dimCateId, String dimTerminalId, String dimCountryId, String dimChargeMode, BigDecimal emplUnitPrice, BigDecimal tenantUnitPrice, String note) {
-        UcApp app = ucAppRemote.getApp(appId);
-        System.out.println(app);
-        List<UcApp> list = ucAppRemote.listApp(10, 0);
-        System.out.println(list);
+    public void releaseFactApp(String appId, String appSlogan, String appVersion, String dimCateId, String dimTerminalId, String dimCountryId, String dimChargeMode, BigDecimal emplUnitPrice, BigDecimal tenantUnitPrice, String note) {
+        UcApp ucApp = ucAppRemote.getApp(appId);
+        if (ucApp == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        DimCategory category = categoryMapper.selectByPrimaryKey(dimCateId);
+        if (category == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        DimCountry country = countryMapper.selectByPrimaryKey(dimCountryId);
+        if (country == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        DimTerminal terminal = terminalMapper.selectByPrimaryKey(dimTerminalId);
+        if (terminal == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        FactApp factApp = new FactApp();
+        factApp.setAppId(appId);
+        factApp.setCateId(dimCateId);
+        factApp.setCateName(category.getCateName());
+        factApp.setTerminalId(dimTerminalId);
+        factApp.setTerminalName(terminal.getTerminalName());
+        factApp.setCountryId(dimCountryId);
+        factApp.setCountryName(country.getCnName());
+        factApp.setChargeMode(dimChargeMode);
+        factApp.setChargeName("free".equals(dimChargeMode) ? "免费" : "付费");
+        factApp.setEmplUnitPrice(emplUnitPrice);
+        factApp.setTenantUnitPrice(tenantUnitPrice);
+        TenantEmpl empl = employeeRemote.getEmployee(ucApp.getCreator());
+        if (empl == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        UcUser user = ucUserRemote.getUser(empl.getUserId());
+        if (user == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        factApp.setAppDeveloper(StringUtils.hasText(empl.getAlias()) ? empl.getAlias() : user.getUserName());
+        UcTenant tenant = tenantRemote.getTenant(empl.getTenantId());
+        if (tenant == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        factApp.setAppTenant(tenant.getTenantName());
+        UcOrg org = orgRemote.getOrgByTenant(tenant.getTenantId());
+        if (org == null) {
+            throw new ApiException(ResultCode.NOTFOUND_ERROR);
+        }
+        factApp.setAppSupplier(org.getOrgName());
+        factApp.setAppIcon(ucApp.getAppIcon());
+        factApp.setAppName(ucApp.getAppName());
+        factApp.setAppNote(note);
+        factApp.setAppSlogan(appSlogan);
+        factApp.setPubTime(IDateUtil.toDateEndMicoSecond(System.currentTimeMillis()));
+        factApp.setNewestVersion(appVersion);
+
+        appMapper.insertSelective(factApp);
+
+        FactVersions versions = new FactVersions();
+        String idNumSeq = null;
+        while (true) {
+            idNumSeq = RandomStringUtils.randomNumeric(20);
+            FactVersionsExample example = new FactVersionsExample();
+            example.createCriteria().andVersionIdEqualTo(idNumSeq);
+            long count = versionsMapper.countByExample(example);
+            if (count < 1) {
+                break;
+            }
+        }
+        versions.setVersionId(idNumSeq);
+        versions.setAppId(appId);
+        versions.setPubTime(IDateUtil.toDateEndMicoSecond(System.currentTimeMillis()));
+        versions.setVersionNum(appVersion);
+        versions.setVersionNote(note);
+        versionsMapper.insertSelective(versions);
     }
 
     @Override
@@ -49,12 +134,12 @@ public class FactAppService implements IFactAppService {
 
     @Override
     public List<FactApp> listFactApp(int limit, long offset) {
-        return null;
+        return appMapper.listFactApp(limit, offset);
     }
 
     @Override
     public List<FactApp> listFactAppWithDim(String dimCateId, String dimTerminalId, String dimCountryId, String dimChargeMode, int limit, long offset) {
-        return null;
+        return appMapper.listFactAppWithDim(dimCateId, dimTerminalId, dimCountryId, dimChargeMode, limit, offset);
     }
 
     @Override
@@ -73,7 +158,7 @@ public class FactAppService implements IFactAppService {
 
     @Override
     public List<FactApp> listFactAppWithPortlet(String portletId, int limit, long offset) {
-        return null;
+        return portletAppMapper.listAppByPortlet(portletId, limit, offset);
     }
 
     @Override
@@ -111,6 +196,6 @@ public class FactAppService implements IFactAppService {
 
     @Override
     public List<FactVersions> listVersion(String appId, int limit, long offset) {
-        return null;
+        return versionsMapper.listVersion(appId, limit, offset);
     }
 }

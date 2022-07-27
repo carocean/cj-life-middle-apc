@@ -44,6 +44,34 @@ public class FactApp {
     private String chargeMode;
 
     /**
+     * Column: cate_name
+     * Type: VARCHAR(50)
+     * Remark: 庸余字段：分类名
+     */
+    private String cateName;
+
+    /**
+     * Column: terminal_name
+     * Type: VARCHAR(50)
+     * Remark: 庸余字段：终端名
+     */
+    private String terminalName;
+
+    /**
+     * Column: country_name
+     * Type: VARCHAR(50)
+     * Remark: 庸余字段：国家名
+     */
+    private String countryName;
+
+    /**
+     * Column: charge_name
+     * Type: VARCHAR(10)
+     * Remark: 庸余字段：要价中文称呼
+     */
+    private String chargeName;
+
+    /**
      * Column: app_name
      * Type: VARCHAR(20)
      * Remark: 应用名
@@ -53,6 +81,7 @@ public class FactApp {
     /**
      * Column: app_icon
      * Type: VARCHAR(250)
+     * Remark: 应用图标
      */
     private String appIcon;
 

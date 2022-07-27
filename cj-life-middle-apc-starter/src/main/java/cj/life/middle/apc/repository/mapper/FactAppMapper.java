@@ -2,9 +2,10 @@ package cj.life.middle.apc.repository.mapper;
 
 import cj.life.middle.apc.domain.FactApp;
 import cj.life.middle.apc.domain.FactAppExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface FactAppMapper {
@@ -62,4 +63,8 @@ public interface FactAppMapper {
      * @mbg.generated generated automatically, do not modify!
      */
     int updateByPrimaryKey(FactApp row);
+
+    List<FactApp> listFactApp(@Param("limit") int limit, @Param("offset") long offset);
+
+    List<FactApp> listFactAppWithDim(@Param("cateId") String cateId,@Param("terminalId") String terminalId, @Param("countryId")String countryId,@Param("chargeMode") String chargeMode, @Param("limit")int limit, @Param("offset")long offset);
 }

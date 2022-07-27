@@ -497,6 +497,286 @@ public class FactAppExample {
             return (Criteria) this;
         }
 
+        public Criteria andCateNameIsNull() {
+            addCriterion("cate_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameIsNotNull() {
+            addCriterion("cate_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameEqualTo(String value) {
+            addCriterion("cate_name =", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameNotEqualTo(String value) {
+            addCriterion("cate_name <>", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameGreaterThan(String value) {
+            addCriterion("cate_name >", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameGreaterThanOrEqualTo(String value) {
+            addCriterion("cate_name >=", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameLessThan(String value) {
+            addCriterion("cate_name <", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameLessThanOrEqualTo(String value) {
+            addCriterion("cate_name <=", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameLike(String value) {
+            addCriterion("cate_name like", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameNotLike(String value) {
+            addCriterion("cate_name not like", value, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameIn(List<String> values) {
+            addCriterion("cate_name in", values, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameNotIn(List<String> values) {
+            addCriterion("cate_name not in", values, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameBetween(String value1, String value2) {
+            addCriterion("cate_name between", value1, value2, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCateNameNotBetween(String value1, String value2) {
+            addCriterion("cate_name not between", value1, value2, "cateName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameIsNull() {
+            addCriterion("terminal_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameIsNotNull() {
+            addCriterion("terminal_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameEqualTo(String value) {
+            addCriterion("terminal_name =", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameNotEqualTo(String value) {
+            addCriterion("terminal_name <>", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameGreaterThan(String value) {
+            addCriterion("terminal_name >", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameGreaterThanOrEqualTo(String value) {
+            addCriterion("terminal_name >=", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameLessThan(String value) {
+            addCriterion("terminal_name <", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameLessThanOrEqualTo(String value) {
+            addCriterion("terminal_name <=", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameLike(String value) {
+            addCriterion("terminal_name like", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameNotLike(String value) {
+            addCriterion("terminal_name not like", value, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameIn(List<String> values) {
+            addCriterion("terminal_name in", values, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameNotIn(List<String> values) {
+            addCriterion("terminal_name not in", values, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameBetween(String value1, String value2) {
+            addCriterion("terminal_name between", value1, value2, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andTerminalNameNotBetween(String value1, String value2) {
+            addCriterion("terminal_name not between", value1, value2, "terminalName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameIsNull() {
+            addCriterion("country_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameIsNotNull() {
+            addCriterion("country_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameEqualTo(String value) {
+            addCriterion("country_name =", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameNotEqualTo(String value) {
+            addCriterion("country_name <>", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameGreaterThan(String value) {
+            addCriterion("country_name >", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameGreaterThanOrEqualTo(String value) {
+            addCriterion("country_name >=", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameLessThan(String value) {
+            addCriterion("country_name <", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameLessThanOrEqualTo(String value) {
+            addCriterion("country_name <=", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameLike(String value) {
+            addCriterion("country_name like", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameNotLike(String value) {
+            addCriterion("country_name not like", value, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameIn(List<String> values) {
+            addCriterion("country_name in", values, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameNotIn(List<String> values) {
+            addCriterion("country_name not in", values, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameBetween(String value1, String value2) {
+            addCriterion("country_name between", value1, value2, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCountryNameNotBetween(String value1, String value2) {
+            addCriterion("country_name not between", value1, value2, "countryName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameIsNull() {
+            addCriterion("charge_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameIsNotNull() {
+            addCriterion("charge_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameEqualTo(String value) {
+            addCriterion("charge_name =", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameNotEqualTo(String value) {
+            addCriterion("charge_name <>", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameGreaterThan(String value) {
+            addCriterion("charge_name >", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameGreaterThanOrEqualTo(String value) {
+            addCriterion("charge_name >=", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameLessThan(String value) {
+            addCriterion("charge_name <", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameLessThanOrEqualTo(String value) {
+            addCriterion("charge_name <=", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameLike(String value) {
+            addCriterion("charge_name like", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameNotLike(String value) {
+            addCriterion("charge_name not like", value, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameIn(List<String> values) {
+            addCriterion("charge_name in", values, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameNotIn(List<String> values) {
+            addCriterion("charge_name not in", values, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameBetween(String value1, String value2) {
+            addCriterion("charge_name between", value1, value2, "chargeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andChargeNameNotBetween(String value1, String value2) {
+            addCriterion("charge_name not between", value1, value2, "chargeName");
+            return (Criteria) this;
+        }
+
         public Criteria andAppNameIsNull() {
             addCriterion("app_name is null");
             return (Criteria) this;

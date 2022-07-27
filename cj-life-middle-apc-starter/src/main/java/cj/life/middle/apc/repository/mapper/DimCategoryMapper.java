@@ -2,9 +2,10 @@ package cj.life.middle.apc.repository.mapper;
 
 import cj.life.middle.apc.domain.DimCategory;
 import cj.life.middle.apc.domain.DimCategoryExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface DimCategoryMapper {
@@ -64,5 +65,4 @@ public interface DimCategoryMapper {
     int updateByPrimaryKey(DimCategory row);
 
     void setOrderNum(@Param("cateId") String cateId, @Param("orderNum") int orderNum);
-
 }

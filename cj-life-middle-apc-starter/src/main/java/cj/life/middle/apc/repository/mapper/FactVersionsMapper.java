@@ -2,9 +2,10 @@ package cj.life.middle.apc.repository.mapper;
 
 import cj.life.middle.apc.domain.FactVersions;
 import cj.life.middle.apc.domain.FactVersionsExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface FactVersionsMapper {
@@ -62,4 +63,6 @@ public interface FactVersionsMapper {
      * @mbg.generated generated automatically, do not modify!
      */
     int updateByPrimaryKey(FactVersions row);
+
+    List<FactVersions> listVersion(@Param("appId") String appId,@Param("limit") int limit, @Param("offset") long offset);
 }

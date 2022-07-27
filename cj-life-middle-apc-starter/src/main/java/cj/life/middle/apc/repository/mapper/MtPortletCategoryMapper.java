@@ -4,9 +4,10 @@ import cj.life.middle.apc.domain.ApcPortlet;
 import cj.life.middle.apc.domain.DimCategory;
 import cj.life.middle.apc.domain.MtPortletCategory;
 import cj.life.middle.apc.domain.MtPortletCategoryExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface MtPortletCategoryMapper {
@@ -68,5 +69,4 @@ public interface MtPortletCategoryMapper {
     List<ApcPortlet> listPortletByCategory(@Param("cateId") String cateId);
 
     List<DimCategory> listCategoryByPortlet(@Param("portletId") String portletId);
-
 }

@@ -8,6 +8,10 @@
     <result column="terminal_id" jdbcType="VARCHAR" property="terminalId" />
     <result column="country_id" jdbcType="VARCHAR" property="countryId" />
     <result column="charge_mode" jdbcType="VARCHAR" property="chargeMode" />
+    <result column="cate_name" jdbcType="VARCHAR" property="cateName" />
+    <result column="terminal_name" jdbcType="VARCHAR" property="terminalName" />
+    <result column="country_name" jdbcType="VARCHAR" property="countryName" />
+    <result column="charge_name" jdbcType="VARCHAR" property="chargeName" />
     <result column="app_name" jdbcType="VARCHAR" property="appName" />
     <result column="app_icon" jdbcType="VARCHAR" property="appIcon" />
     <result column="newest_version" jdbcType="VARCHAR" property="newestVersion" />
@@ -82,9 +86,9 @@
   </sql>
   <sql id="Base_Column_List">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    app_id, cate_id, terminal_id, country_id, charge_mode, app_name, app_icon, newest_version, 
-    pub_time, app_developer, app_supplier, app_tenant, app_slogan, empl_unit_price, tenant_unit_price, 
-    app_note
+    app_id, cate_id, terminal_id, country_id, charge_mode, cate_name, terminal_name, 
+    country_name, charge_name, app_name, app_icon, newest_version, pub_time, app_developer, 
+    app_supplier, app_tenant, app_slogan, empl_unit_price, tenant_unit_price, app_note
   </sql>
   <select id="selectByExample" parameterType="cj.life.middle.apc.domain.FactAppExample" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -123,17 +127,19 @@
   <insert id="insert" parameterType="cj.life.middle.apc.domain.FactApp">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     insert into fact_app (app_id, cate_id, terminal_id, 
-      country_id, charge_mode, app_name, 
-      app_icon, newest_version, pub_time, 
-      app_developer, app_supplier, app_tenant, 
-      app_slogan, empl_unit_price, tenant_unit_price, 
-      app_note)
+      country_id, charge_mode, cate_name, 
+      terminal_name, country_name, charge_name, 
+      app_name, app_icon, newest_version, 
+      pub_time, app_developer, app_supplier, 
+      app_tenant, app_slogan, empl_unit_price, 
+      tenant_unit_price, app_note)
     values (#{appId,jdbcType=VARCHAR}, #{cateId,jdbcType=VARCHAR}, #{terminalId,jdbcType=VARCHAR}, 
-      #{countryId,jdbcType=VARCHAR}, #{chargeMode,jdbcType=VARCHAR}, #{appName,jdbcType=VARCHAR}, 
-      #{appIcon,jdbcType=VARCHAR}, #{newestVersion,jdbcType=VARCHAR}, #{pubTime,jdbcType=VARCHAR}, 
-      #{appDeveloper,jdbcType=VARCHAR}, #{appSupplier,jdbcType=VARCHAR}, #{appTenant,jdbcType=VARCHAR}, 
-      #{appSlogan,jdbcType=VARCHAR}, #{emplUnitPrice,jdbcType=DECIMAL}, #{tenantUnitPrice,jdbcType=DECIMAL}, 
-      #{appNote,jdbcType=VARCHAR})
+      #{countryId,jdbcType=VARCHAR}, #{chargeMode,jdbcType=VARCHAR}, #{cateName,jdbcType=VARCHAR}, 
+      #{terminalName,jdbcType=VARCHAR}, #{countryName,jdbcType=VARCHAR}, #{chargeName,jdbcType=VARCHAR}, 
+      #{appName,jdbcType=VARCHAR}, #{appIcon,jdbcType=VARCHAR}, #{newestVersion,jdbcType=VARCHAR}, 
+      #{pubTime,jdbcType=VARCHAR}, #{appDeveloper,jdbcType=VARCHAR}, #{appSupplier,jdbcType=VARCHAR}, 
+      #{appTenant,jdbcType=VARCHAR}, #{appSlogan,jdbcType=VARCHAR}, #{emplUnitPrice,jdbcType=DECIMAL}, 
+      #{tenantUnitPrice,jdbcType=DECIMAL}, #{appNote,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cj.life.middle.apc.domain.FactApp">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -153,6 +159,18 @@
       </if>
       <if test="chargeMode != null">
         charge_mode,
+      </if>
+      <if test="cateName != null">
+        cate_name,
+      </if>
+      <if test="terminalName != null">
+        terminal_name,
+      </if>
+      <if test="countryName != null">
+        country_name,
+      </if>
+      <if test="chargeName != null">
+        charge_name,
       </if>
       <if test="appName != null">
         app_name,
@@ -203,6 +221,18 @@
       </if>
       <if test="chargeMode != null">
         #{chargeMode,jdbcType=VARCHAR},
+      </if>
+      <if test="cateName != null">
+        #{cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalName != null">
+        #{terminalName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryName != null">
+        #{countryName,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeName != null">
+        #{chargeName,jdbcType=VARCHAR},
       </if>
       <if test="appName != null">
         #{appName,jdbcType=VARCHAR},
@@ -265,6 +295,18 @@
       <if test="row.chargeMode != null">
         charge_mode = #{row.chargeMode,jdbcType=VARCHAR},
       </if>
+      <if test="row.cateName != null">
+        cate_name = #{row.cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="row.terminalName != null">
+        terminal_name = #{row.terminalName,jdbcType=VARCHAR},
+      </if>
+      <if test="row.countryName != null">
+        country_name = #{row.countryName,jdbcType=VARCHAR},
+      </if>
+      <if test="row.chargeName != null">
+        charge_name = #{row.chargeName,jdbcType=VARCHAR},
+      </if>
       <if test="row.appName != null">
         app_name = #{row.appName,jdbcType=VARCHAR},
       </if>
@@ -311,6 +353,10 @@
       terminal_id = #{row.terminalId,jdbcType=VARCHAR},
       country_id = #{row.countryId,jdbcType=VARCHAR},
       charge_mode = #{row.chargeMode,jdbcType=VARCHAR},
+      cate_name = #{row.cateName,jdbcType=VARCHAR},
+      terminal_name = #{row.terminalName,jdbcType=VARCHAR},
+      country_name = #{row.countryName,jdbcType=VARCHAR},
+      charge_name = #{row.chargeName,jdbcType=VARCHAR},
       app_name = #{row.appName,jdbcType=VARCHAR},
       app_icon = #{row.appIcon,jdbcType=VARCHAR},
       newest_version = #{row.newestVersion,jdbcType=VARCHAR},
@@ -341,6 +387,18 @@
       </if>
       <if test="chargeMode != null">
         charge_mode = #{chargeMode,jdbcType=VARCHAR},
+      </if>
+      <if test="cateName != null">
+        cate_name = #{cateName,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalName != null">
+        terminal_name = #{terminalName,jdbcType=VARCHAR},
+      </if>
+      <if test="countryName != null">
+        country_name = #{countryName,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeName != null">
+        charge_name = #{chargeName,jdbcType=VARCHAR},
       </if>
       <if test="appName != null">
         app_name = #{appName,jdbcType=VARCHAR},
@@ -385,6 +443,10 @@
       terminal_id = #{terminalId,jdbcType=VARCHAR},
       country_id = #{countryId,jdbcType=VARCHAR},
       charge_mode = #{chargeMode,jdbcType=VARCHAR},
+      cate_name = #{cateName,jdbcType=VARCHAR},
+      terminal_name = #{terminalName,jdbcType=VARCHAR},
+      country_name = #{countryName,jdbcType=VARCHAR},
+      charge_name = #{chargeName,jdbcType=VARCHAR},
       app_name = #{appName,jdbcType=VARCHAR},
       app_icon = #{appIcon,jdbcType=VARCHAR},
       newest_version = #{newestVersion,jdbcType=VARCHAR},
@@ -398,4 +460,31 @@
       app_note = #{appNote,jdbcType=VARCHAR}
     where app_id = #{appId,jdbcType=VARCHAR}
   </update>
+  <select id="listFactApp" parameterType="cj.life.middle.apc.domain.FactApp" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from fact_app
+    order by pub_time
+    limit #{offset},#{limit}
+  </select>
+  <select id="listFactAppWithDim" parameterType="cj.life.middle.apc.domain.FactApp" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from fact_app
+    where 1=1
+    <if test="cateId != null">
+      and cate_id = #{cateId,jdbcType=VARCHAR}
+    </if>
+    <if test="terminalId != null">
+      and terminal_id = #{terminalId,jdbcType=VARCHAR}
+    </if>
+    <if test="countryId != null">
+      and country_id = #{countryId,jdbcType=VARCHAR}
+    </if>
+    <if test="chargeMode != null">
+      and charge_mode = #{chargeMode,jdbcType=VARCHAR}
+    </if>
+    order by pub_time desc
+    limit #{offset},#{limit}
+  </select>
 </mapper>

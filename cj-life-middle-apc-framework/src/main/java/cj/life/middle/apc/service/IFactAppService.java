@@ -8,8 +8,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface IFactAppService {
-    void createFactApp(
+    void releaseFactApp(
             String appId,
+            String appSlogan,
+            String appVersion,
             String dimCateId,
             String dimTerminalId,
             String dimCountryId,

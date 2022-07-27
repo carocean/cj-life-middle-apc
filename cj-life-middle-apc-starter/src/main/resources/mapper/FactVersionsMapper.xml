@@ -223,4 +223,12 @@
       version_note = #{versionNote,jdbcType=VARCHAR}
     where version_id = #{versionId,jdbcType=VARCHAR}
   </update>
+  <select id="listVersion" parameterType="cj.life.middle.apc.domain.FactVersions" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from fact_versions
+    where app_id = #{appId,jdbcType=VARCHAR}
+    order by version_num desc
+    limit #{offset},#{limit}
+  </select>
 </mapper>

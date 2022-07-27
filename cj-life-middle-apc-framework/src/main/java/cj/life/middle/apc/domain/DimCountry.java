@@ -9,7 +9,7 @@ import lombok.Data;
 public class DimCountry {
     /**
      * Column: country_id
-     * Type: VARCHAR(10)
+     * Type: VARCHAR(50)
      * Remark: 标识
      */
     private String countryId;

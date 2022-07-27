@@ -2,9 +2,10 @@ package cj.life.middle.apc.repository.mapper;
 
 import cj.life.middle.apc.domain.DimTerminal;
 import cj.life.middle.apc.domain.DimTerminalExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface DimTerminalMapper {
@@ -64,5 +65,4 @@ public interface DimTerminalMapper {
     int updateByPrimaryKey(DimTerminal row);
 
     void setOrderNum(@Param("terminalId") String terminalId, @Param("orderNum") int orderNum);
-
 }

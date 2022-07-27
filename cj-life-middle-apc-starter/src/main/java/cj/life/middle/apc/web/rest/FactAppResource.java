@@ -33,22 +33,24 @@ public class FactAppResource implements IFactAppRC {
     IFactAppService factAppService;
 
     @GetMapping("/createFactApp")
-    @ApiOperation("创建应用")
+    @ApiOperation("发布应用【在审批完成后调用该方法】")
     @ApiResult
     @ApiResponses({
             @ApiResponse(responseCode = "2000", description = "ok"),
             @ApiResponse(responseCode = "1002", description = "null_parameter"),
     })
     @Override
-    public void createFactApp(
+    public void releaseFactApp(
             @RequestParam String appId,
+            @RequestParam String appSlogan,
+            @RequestParam String appVersion,
             @RequestParam String dimCateId,
             @RequestParam String dimTerminalId,
             @RequestParam String dimCountryId,
             @RequestParam String dimChargeMode,
             @RequestParam BigDecimal emplUnitPrice,
             @RequestParam BigDecimal tenantUnitPrice,
-            @ApiParam String note) {
+            @RequestParam String note) {
         if (!StringUtils.hasText(appId)) {
             throw new ApiException(ResultCode.PARAM_IS_BLANK);
         }
@@ -64,13 +66,16 @@ public class FactAppResource implements IFactAppRC {
         if (!StringUtils.hasText(dimChargeMode)) {
             throw new ApiException(ResultCode.PARAM_IS_BLANK);
         }
+        if (!StringUtils.hasText(note)) {
+            throw new ApiException(ResultCode.PARAM_IS_BLANK);
+        }
         if (emplUnitPrice == null) {
             throw new ApiException(ResultCode.PARAM_IS_BLANK);
         }
         if (tenantUnitPrice == null) {
             throw new ApiException(ResultCode.PARAM_IS_BLANK);
         }
-        factAppService.createFactApp(appId, dimCateId, dimTerminalId, dimCountryId, dimChargeMode, emplUnitPrice, tenantUnitPrice, note);
+        factAppService.releaseFactApp(appId, appSlogan, appVersion, dimCateId, dimTerminalId, dimCountryId, dimChargeMode, emplUnitPrice, tenantUnitPrice, note);
     }
 
     @GetMapping("/removeFactApp")
