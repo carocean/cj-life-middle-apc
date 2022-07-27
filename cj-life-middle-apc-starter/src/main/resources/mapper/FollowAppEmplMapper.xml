@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cj.life.middle.apc.repository.mapper.PurchAppTenantMapper">
-  <resultMap id="BaseResultMap" type="cj.life.middle.apc.domain.PurchAppTenant">
+<mapper namespace="cj.life.middle.apc.repository.mapper.FollowAppEmplMapper">
+  <resultMap id="BaseResultMap" type="cj.life.middle.apc.domain.FollowAppEmpl">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     <id column="app_id" jdbcType="VARCHAR" property="appId" />
-    <id column="tenant_id" jdbcType="VARCHAR" property="tenantId" />
+    <id column="empl_id" jdbcType="VARCHAR" property="emplId" />
+    <result column="follow_time" jdbcType="VARCHAR" property="followTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!-- @mbg.generated: generated automatically, do not modify! -->
@@ -68,16 +69,16 @@
   </sql>
   <sql id="Base_Column_List">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    app_id, tenant_id
+    app_id, empl_id, follow_time
   </sql>
-  <select id="selectByExample" parameterType="cj.life.middle.apc.domain.PurchAppTenantExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cj.life.middle.apc.domain.FollowAppEmplExample" resultMap="BaseResultMap">
     <!-- @mbg.generated: generated automatically, do not modify! -->
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from purch_app_tenant
+    from follow_app_empl
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,60 +86,79 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    select 
+    <include refid="Base_Column_List" />
+    from follow_app_empl
+    where app_id = #{appId,jdbcType=VARCHAR}
+      and empl_id = #{emplId,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="map">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    delete from purch_app_tenant
+    delete from follow_app_empl
     where app_id = #{appId,jdbcType=VARCHAR}
-      and tenant_id = #{tenantId,jdbcType=VARCHAR}
+      and empl_id = #{emplId,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="cj.life.middle.apc.domain.PurchAppTenantExample">
+  <delete id="deleteByExample" parameterType="cj.life.middle.apc.domain.FollowAppEmplExample">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    delete from purch_app_tenant
+    delete from follow_app_empl
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cj.life.middle.apc.domain.PurchAppTenant">
+  <insert id="insert" parameterType="cj.life.middle.apc.domain.FollowAppEmpl">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    insert into purch_app_tenant (app_id, tenant_id)
-    values (#{appId,jdbcType=VARCHAR}, #{tenantId,jdbcType=VARCHAR})
+    insert into follow_app_empl (app_id, empl_id, follow_time
+      )
+    values (#{appId,jdbcType=VARCHAR}, #{emplId,jdbcType=VARCHAR}, #{followTime,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="cj.life.middle.apc.domain.PurchAppTenant">
+  <insert id="insertSelective" parameterType="cj.life.middle.apc.domain.FollowAppEmpl">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    insert into purch_app_tenant
+    insert into follow_app_empl
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="appId != null">
         app_id,
       </if>
-      <if test="tenantId != null">
-        tenant_id,
+      <if test="emplId != null">
+        empl_id,
+      </if>
+      <if test="followTime != null">
+        follow_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="appId != null">
         #{appId,jdbcType=VARCHAR},
       </if>
-      <if test="tenantId != null">
-        #{tenantId,jdbcType=VARCHAR},
+      <if test="emplId != null">
+        #{emplId,jdbcType=VARCHAR},
+      </if>
+      <if test="followTime != null">
+        #{followTime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cj.life.middle.apc.domain.PurchAppTenantExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cj.life.middle.apc.domain.FollowAppEmplExample" resultType="java.lang.Long">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    select count(*) from purch_app_tenant
+    select count(*) from follow_app_empl
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    update purch_app_tenant
+    update follow_app_empl
     <set>
       <if test="row.appId != null">
         app_id = #{row.appId,jdbcType=VARCHAR},
       </if>
-      <if test="row.tenantId != null">
-        tenant_id = #{row.tenantId,jdbcType=VARCHAR},
+      <if test="row.emplId != null">
+        empl_id = #{row.emplId,jdbcType=VARCHAR},
+      </if>
+      <if test="row.followTime != null">
+        follow_time = #{row.followTime,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="example != null">
@@ -147,11 +167,39 @@
   </update>
   <update id="updateByExample" parameterType="map">
     <!-- @mbg.generated: generated automatically, do not modify! -->
-    update purch_app_tenant
+    update follow_app_empl
     set app_id = #{row.appId,jdbcType=VARCHAR},
-      tenant_id = #{row.tenantId,jdbcType=VARCHAR}
+      empl_id = #{row.emplId,jdbcType=VARCHAR},
+      follow_time = #{row.followTime,jdbcType=VARCHAR}
     <if test="example != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cj.life.middle.apc.domain.FollowAppEmpl">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update follow_app_empl
+    <set>
+      <if test="followTime != null">
+        follow_time = #{followTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where app_id = #{appId,jdbcType=VARCHAR}
+      and empl_id = #{emplId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cj.life.middle.apc.domain.FollowAppEmpl">
+    <!-- @mbg.generated: generated automatically, do not modify! -->
+    update follow_app_empl
+    set follow_time = #{followTime,jdbcType=VARCHAR}
+    where app_id = #{appId,jdbcType=VARCHAR}
+      and empl_id = #{emplId,jdbcType=VARCHAR}
+  </update>
+  <select id="listAppByEmployee" parameterType="cj.life.middle.apc.domain.FollowAppEmpl" resultMap="cj.life.middle.apc.repository.mapper.FactAppMapper.BaseResultMap">
+    select
+    app.*
+    from follow_app_empl fae,fact_app app
+    where fae.app_id=app.app_id
+    and empl_id = #{emplId,jdbcType=VARCHAR}
+    order by follow_time desc
+    limit #{offset},#{limit}
+  </select>
 </mapper>

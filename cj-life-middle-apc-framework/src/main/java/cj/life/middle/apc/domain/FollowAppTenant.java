@@ -3,10 +3,10 @@ package cj.life.middle.apc.domain;
 import lombok.Data;
 
 /**
- * Table: purch_app_tenant
+ * Table: follow_app_tenant
  */
 @Data
-public class PurchAppTenant {
+public class FollowAppTenant {
     /**
      * Column: app_id
      * Type: VARCHAR(50)
@@ -20,4 +20,11 @@ public class PurchAppTenant {
      * Remark: 租户标识
      */
     private String tenantId;
+
+    /**
+     * Column: follow_time
+     * Type: VARCHAR(17)
+     * Remark: 关注时间
+     */
+    private String followTime;
 }
