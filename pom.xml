@@ -20,6 +20,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <cj-life-middle-apc-framework.version>0.0.1-SNAPSHOT</cj-life-middle-apc-framework.version>
         <cj-life-middle-apc-starter.version>0.0.1-SNAPSHOT</cj-life-middle-apc-starter.version>
+        <cj-life-middle-apc-remote.version>0.0.1-SNAPSHOT</cj-life-middle-apc-remote.version>
     </properties>
     <profiles>
         <profile>
@@ -28,10 +29,12 @@
             <properties>
                 <cj-life-middle-apc-framework.version>0.0.1</cj-life-middle-apc-framework.version>
                 <cj-life-middle-apc-starter.version>0.0.1</cj-life-middle-apc-starter.version>
+                <cj-life-middle-apc-remote.version>0.0.1</cj-life-middle-apc-remote.version>
             </properties>
         </profile>
     </profiles>
     <modules>
+        <module>cj-life-middle-apc-remote</module>
         <module>cj-life-middle-apc-framework</module>
         <module>cj-life-middle-apc-starter</module>
     </modules>

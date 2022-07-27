@@ -1,4 +1,4 @@
-package cj.life.middle.apc.web;
+package cj.life.middle.apc.service;
 
 import cj.life.middle.apc.domain.FactApp;
 import cj.life.middle.apc.domain.FactImgs;
@@ -7,7 +7,7 @@ import cj.life.middle.apc.domain.FactVersions;
 import java.math.BigDecimal;
 import java.util.List;
 
-public interface IFactAppRC {
+public interface IFactAppService {
     void createFactApp(
             String appId,
             String dimCateId,

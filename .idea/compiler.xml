@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cj-life-middle-apc-framework" />
         <module name="cj-life-middle-apc-starter" />
+        <module name="cj-life-middle-apc-remote" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cj-life-middle-apc-framework" options="-parameters" />
+      <module name="cj-life-middle-apc-remote" options="-parameters" />
       <module name="cj-life-middle-apc-starter" options="-parameters" />
     </option>
   </component>

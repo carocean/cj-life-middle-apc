@@ -34,6 +34,11 @@
             <artifactId>cj-life-middle-apc-framework</artifactId>
             <version>${cj-life-middle-apc-framework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>cj.life.middle</groupId>
+            <artifactId>cj-life-middle-apc-remote</artifactId>
+            <version>${cj-life-middle-apc-remote.version}</version>
+        </dependency>
     </dependencies>
 
 
