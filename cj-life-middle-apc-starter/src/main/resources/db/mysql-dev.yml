@@ -5,8 +5,8 @@ datasource:
     password: ${docker.datasource.write.password:mysql123}
     driver-class-name: com.mysql.cj.jdbc.Driver
   read:
-    url: ${docker.datasource.write.url:jdbc:mysql://localhost:6447/life.apc?allowMultiQueries=true&allowPublicKeyRetrieval=true}
-    username: ${docker.datasource.write.username:cj}
-    password: ${docker.datasource.write.password:mysql123}
+    url: ${docker.datasource.read.url:jdbc:mysql://localhost:6447/life.apc?allowMultiQueries=true&allowPublicKeyRetrieval=true}
+    username: ${docker.datasource.read.username:cj}
+    password: ${docker.datasource.read.password:mysql123}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
